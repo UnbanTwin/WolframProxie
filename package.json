@@ -1,0 +1,6 @@
+{
+    "name": "wolframproxie",
+    "dependencies": {
+        "wolfram-alpha": "0.2.1"
+    }
+}
