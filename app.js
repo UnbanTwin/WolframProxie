@@ -1,11 +1,14 @@
 var wolfram = require('wolfram-alpha').createClient("THYQLJ-3K45Y2A7W5");
 var http = require('http');
+var url = require('url');
 
 var server = http.createServer(function (request, response) {
+  if (request.url.indexOf("favicon") != -1) return response.end();
   // the incomming request object has all the info we
   console.log("incomming request for " + request.url);
-
-  wolfram.query("integrate 2x", function (err, data) {
+  console.log(url.parse(request.url, true));
+  var search = url.parse(request.url, true).query.search;
+  wolfram.query(search, function (err, data) {
 
     if (err) throw err;
     console.log("Wolfram responded!");
