@@ -21,5 +21,5 @@ var server = http.createServer(function (request, response) {
   });
 });
 
-server.listen(5000);
-console.log("server listening on localhost:5000");
+server.listen(process.env.PORT || 8080);
+console.log(process.env.PORT || 8080);
