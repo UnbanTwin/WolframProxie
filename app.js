@@ -16,7 +16,7 @@ var server = http.createServer(function (request, response) {
     // we need to write some data back to the http response
     // set the header so browsers know this is json
     response.setHeader("Content-Type", "application/json");
-    res.setHeader('Access-Control-Allow-Origin', '*');
+    response.setHeader('Access-Control-Allow-Origin', '*');
     response.write(JSON.stringify(data));
     response.end();
   });
