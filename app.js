@@ -1,4 +1,4 @@
-var wolfram = require('wolfram-alpha').createClient("THYQLJ-3K45Y2A7W5");
+var wolfram = require('wolfram-alpha').createClient("");
 var http = require('http');
 var url = require('url');
 
