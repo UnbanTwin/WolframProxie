@@ -21,6 +21,15 @@ var server = http.createServer(function (request, response) {
             response.end();
             return
         });
+    }
+    else if (request.url.indexOf("dice")){
+        var sides = parseInt(url.parse(request.url, true).query.sides);
+        console.dir(sides);
+        if (isNaN(sides)) sides = 6;
+        var number = Math.floor(Math.random() * sides + 1);
+        response.write(JSON.stringify({result : number}));
+        response.end()
+
     }else {
         response.end();
     }
