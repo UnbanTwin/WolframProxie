@@ -17,6 +17,7 @@ var server = http.createServer(function (request, response) {
             // set the header so browsers know this is json
             response.setHeader("Content-Type", "application/json");
             response.setHeader('Access-Control-Allow-Origin', '*');
+            response.setHeader('X-Clacks-Overhead', 'GNU Terry Pratchet');
             response.write(JSON.stringify(data));
             response.end();
             return
@@ -29,6 +30,7 @@ var server = http.createServer(function (request, response) {
         var number = Math.floor(Math.random() * sides + 1);
         response.setHeader("Content-Type", "application/json");
         response.setHeader('Access-Control-Allow-Origin', '*');
+        response.setHeader('X-Clacks-Overhead', 'GNU Terry Pratchet');
         response.write(JSON.stringify({result : number}));
 
         response.end()
