@@ -3,6 +3,7 @@ var http = require('http');
 var url = require('url');
 
 var server = http.createServer(function (request, response) {
+    response.setHeader('X-Clacks-Overhead', 'GNU Terry Pratchet');
     if (request.url.indexOf("favicon") != -1) return response.end();
     if (request.url.indexOf("wolfram") != -1) {
         console.log("incomming request for " + request.url);
@@ -30,7 +31,7 @@ var server = http.createServer(function (request, response) {
         var number = Math.floor(Math.random() * sides + 1);
         response.setHeader("Content-Type", "application/json");
         response.setHeader('Access-Control-Allow-Origin', '*');
-        response.setHeader('X-Clacks-Overhead', 'GNU Terry Pratchet');
+
         response.write(JSON.stringify({result : number}));
 
         response.end()
